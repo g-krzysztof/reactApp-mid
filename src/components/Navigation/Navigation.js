@@ -10,11 +10,21 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-function Navigation() {
+const List = styled.ul`
+  display: flex;
+`;
+
+function Navigation({ items }) {
     return(
         <Container>
             <Wrapper>
-                Text test
+                <List>
+                    {items.map(item => (
+                        <li>
+                            <a>{item.content}</a>
+                        </li>
+                    ))}
+                </List>
             </Wrapper>
         </Container>
     )
