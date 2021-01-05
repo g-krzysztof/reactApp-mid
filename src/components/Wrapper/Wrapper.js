@@ -9,4 +9,4 @@ const Wrapper = styled.div`
   padding-left: 10px;
 `;
 
-export default  Wrapper;
+export default Wrapper;

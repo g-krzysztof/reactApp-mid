@@ -6,7 +6,7 @@ import {
     Route
 } from "react-router-dom";
 
-import { Navigation } from "components";
+import { Navigation, Wrapper, LangButton } from "components";
 import theme from "utils/theme";
 
 import GlobalStyles from "./index.css";
@@ -16,14 +16,24 @@ function App() {
         <ThemeProvider theme={theme}>
             <GlobalStyles />
             <Router>
-                <Navigation items={[
-                    { content: 'Home Page', to: '/' },
-                    { content: 'Budget Page', to: '/budget' },
-                ]} />
-                <Switch>
-                    <Route exact path="/">Homepage</Route>
-                    <Route path="/budget">Budget page</Route>
-                </Switch>
+                <Navigation
+                    items={[
+                        { content: 'Home Page', to: '/' },
+                        { content: 'Budget Page', to: '/budget' },
+                    ]}
+                    RightElement={(
+                        <div style={{display: 'flex'}}>
+                            <LangButton>pl</LangButton>
+                            <LangButton>en</LangButton>
+                        </div>
+                    )}
+                />
+                <Wrapper>
+                    <Switch>
+                        <Route exact path="/">Homepage</Route>
+                        <Route path="/budget">Budget page</Route>
+                    </Switch>
+                </Wrapper>
             </Router>
         </ThemeProvider>
     );
