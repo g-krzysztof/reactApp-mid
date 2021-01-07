@@ -5,6 +5,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Navigation, Wrapper, LangButton } from "components";
 import theme from "utils/theme";
@@ -12,19 +13,20 @@ import theme from "utils/theme";
 import GlobalStyles from "./index.css";
 
 function App() {
+    const { t, i18n } = useTranslation();
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
             <Router>
                 <Navigation
                     items={[
-                        { content: 'Home Page', to: '/' },
-                        { content: 'Budget Page', to: '/budget' },
+                        { content: t('homePage'), to: '/' },
+                        { content: t('budgetPage'), to: '/budget' },
                     ]}
                     RightElement={(
                         <div style={{display: 'flex'}}>
-                            <LangButton>pl</LangButton>
-                            <LangButton>en</LangButton>
+                            <LangButton onClick={()=>i18n.changeLanguage('pl')}>pl</LangButton>
+                            <LangButton onClick={()=>i18n.changeLanguage('en')}>en</LangButton>
                         </div>
                     )}
                 />
@@ -39,4 +41,12 @@ function App() {
     );
 }
 
-export default App;
+function RootApp() {
+    return (
+     <React.Suspense fallback={'wait for it...'}>
+         <App />
+     </React.Suspense>
+    )
+}
+
+export default RootApp;
