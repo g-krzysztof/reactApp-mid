@@ -24,11 +24,10 @@ i18n
         saveMissing: true,
 
         backend: {
-            // cors-anywhere is a trick. Don't use it in production
-            // loadPath: 'https://cors-anywhere.herokuapp.com/https://api.poeditor.com/v2/terms/list',
-            // addPath: 'https://cors-anywhere.herokuapp.com/https://api.poeditor.com/v2/terms/add',
-            loadPath: 'https://api.poeditor.com/v2/terms/list',
-            addPath: 'https://api.poeditor.com/v2/terms/add',
+            loadPath: 'https://poe-cors-backend.netlify.app/.netlify/functions/server/poe',
+            // loadPath: 'http://localhost:3004/poe',
+            addPath: 'https://poe-cors-backend.netlify.app/.netlify/functions/server/poeAdd',
+            // addPath: 'http://localhost:3004/poeAdd',
             crossDomain: true,
             parse: data => {
                 const parsedData = JSON.parse(data);
