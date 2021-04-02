@@ -22,7 +22,7 @@ function App() {
                     items={[
                         { content: t('homePage'), to: '/' },
                         { content: t('budgetPage'), to: '/budget' },
-                        { content: t('budgetPageTralala'), to: '/budget2' },
+                        { content: t('infoPage'), to: '/info' },
                     ]}
                     RightElement={(
                         <div style={{display: 'flex'}}>
