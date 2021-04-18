@@ -13,16 +13,16 @@ import theme from "utils/theme";
 import GlobalStyles from "./index.css";
 
 function App() {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
             <Router>
                 <Navigation
                     items={[
-                        { content: t('homePage'), to: '/' },
-                        { content: t('budgetPage'), to: '/budget' },
-                        { content: t('infoPage'), to: '/info' },
+                        { content: 'homePage', to: '/' },
+                        { content: 'budgetPage', to: '/budget' },
+                        { content: 'infoPage', to: '/info' },
                     ]}
                     RightElement={(
                         <div style={{display: 'flex'}}>
