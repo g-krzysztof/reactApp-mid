@@ -18,6 +18,11 @@ export const List = styled.ul`
   display: flex;
   font-weight: bold;
   font-size: 14px;
+  li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   a{
     text-decoration: none;
     padding-right: 20px;

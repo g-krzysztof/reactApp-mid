@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { Navigation, Wrapper, LangButton, LoadingIndicator } from 'components'
+import { Navigation, Wrapper, LoadingIndicator, Button } from 'components'
 import theme from 'utils/theme'
 
 import GlobalStyles from './index.css'
@@ -26,8 +26,8 @@ function App () {
           ]}
           RightElement={(
             <div style={{ display: 'flex' }}>
-              <LangButton onClick={() => i18n.changeLanguage('pl')}>pl</LangButton>
-              <LangButton onClick={() => i18n.changeLanguage('en')}>en</LangButton>
+              <Button variant='regular' onClick={() => i18n.changeLanguage('pl')}>pl</Button>
+              <Button variant='regular' onClick={() => i18n.changeLanguage('en')}>en</Button>
             </div>
                     )}
         />
