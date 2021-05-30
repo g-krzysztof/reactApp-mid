@@ -50,6 +50,6 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools": "^3.7.0"
+    "redux-devtools-extension": "^2.13.9"
   }
 }
